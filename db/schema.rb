@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 2019_12_11_153642) do
   create_table "items", force: :cascade do |t|
     t.string "category"
     t.string "api_id"
-    t.string "media_url"
+    t.text "media_url"
     t.string "title"
     t.string "media_type"
-    t.string "description"
+    t.text "description"
     t.string "date_uploaded"
     t.integer "library_id"
     t.datetime "created_at", precision: 6, null: false
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2019_12_11_153642) do
 
   create_table "libraries", force: :cascade do |t|
     t.string "title"
-    t.string "description"
+    t.text "description"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
