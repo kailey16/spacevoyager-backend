@@ -2,7 +2,8 @@ class ApplicationController < ActionController::API
   before_action :authorized
 
   def encode_token(payload)
-      JWT.encode(payload, 'my_s3cr3t') #secret key may need to be in a helper function which returns the secret key
+      JWT.encode(payload, 'my_s3cr3t') 
+      #secret key may need to be in a helper function which returns the secret key
   end
 
   def auth_header
@@ -22,10 +23,10 @@ class ApplicationController < ActionController::API
   end
 
   def current_user
-      if decoded_token
-          user_id = decoded_token[0]['user_id']
-          @user = User.find_by(id: user_id)
-      end
+    if decoded_token
+        user_id = decoded_token[0]['user_id']
+        @user = User.find_by(id: user_id)
+    end
   end
 
   def logged_in?

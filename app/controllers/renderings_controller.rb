@@ -1,6 +1,6 @@
 class RenderingsController < ApplicationController
   require 'rest-client'
-  skip_before_action :authorized
+  skip_before_action :authorized 
 
   NASA_API_KEY = ENV['nasa_api_key']
 
