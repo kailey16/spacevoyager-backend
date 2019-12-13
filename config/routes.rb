@@ -10,8 +10,10 @@ Rails.application.routes.draw do
   end
 
   # example ------ get '/popular/:page', to: 'movie#popular'
-  get '/marsrover', to: 'renderings#marsrover'
-  get '/nasalibrary', to: 'renderings#nasalibrary'
+  get '/marsrover', to: 'renderings#marsroverInitial'
+  get '/nasalibrary', to: 'renderings#nasalibraryInitial'
+  post '/searchwithkeyword', to: 'renderings#nasalibraryWithKeyword'
+  get '/marsweather', to: 'renderings#marsweather'
 
   
 end
