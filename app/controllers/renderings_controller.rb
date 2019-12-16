@@ -1,12 +1,12 @@
 class RenderingsController < ApplicationController
   require 'rest-client'
-  skip_before_action :authorized 
+  skip_before_action :authorized  
 
   NASA_API_KEY = ENV['nasa_api_key']
 
   def marsroverInitial
 
-    url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?&sol=1000&api_key=#{NASA_API_KEY}"
+    url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?camera=navcam&sol=1000&api_key=#{NASA_API_KEY}"
     response = RestClient.get("#{url}")
     parsedJSON = JSON.parse(response)
 
