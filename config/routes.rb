@@ -18,10 +18,6 @@ Rails.application.routes.draw do
   resources :libraries, only: [:create, :destroy]
   post '/mylibraries', to: 'libraries#index'
 
-  resources :items, only: [:create, :destroy]
   resources :save_items, only: [:create, :destroy]
-
-
-  # save_items POST   /save_items(.:format)                          save_items#create
   
 end
