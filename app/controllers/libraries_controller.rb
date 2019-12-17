@@ -1,12 +1,13 @@
 class LibrariesController < ApplicationController
-  
-  def index
+  before_action :authorized
 
+  def index
+    render json: current_user.libraries
   end
 
   def create
-    name = params["libraryName"]
-    description = params["libraryDescription"]
+    name = params["libName"]
+    description = params["libDescription"]
     newLib = Library.find_or_create_by(user_id: current_user.id, title: name, description: description)
 
     render json: newLib

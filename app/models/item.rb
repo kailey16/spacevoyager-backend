@@ -1,3 +1,4 @@
 class Item < ApplicationRecord
-  belongs_to :library
+  has_many :save_items
+  has_many :libraries, through: :save_items
 end

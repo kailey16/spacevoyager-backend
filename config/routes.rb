@@ -15,7 +15,13 @@ Rails.application.routes.draw do
   post '/searchwithkeyword', to: 'renderings#nasalibraryWithKeyword'
   get '/marsweather', to: 'renderings#marsweather'
 
-  resources :libraries, only: [:index, :create, :destroy]
+  resources :libraries, only: [:create, :destroy]
+  post '/mylibraries', to: 'libraries#index'
 
+  resources :items, only: [:create, :destroy]
+  resources :save_items, only: [:create, :destroy]
+
+
+  # save_items POST   /save_items(.:format)                          save_items#create
   
 end
