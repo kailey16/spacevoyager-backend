@@ -4,9 +4,8 @@ class SaveItemsController < ApplicationController
   def create
     library = params[:library]
     image = params[:image]
-    byebug
+    
     if image["data"]
-      byebug
       item = Item.find_or_create_by(
         category: "nasalibrary",
         api_id: image["data"][0]["nasa_id"],
@@ -14,7 +13,7 @@ class SaveItemsController < ApplicationController
         title: image["data"][0]["title"],
         media_type: image["data"][0]["media_type"],
         description: image["data"][0]["description"],
-        date_uploaded: image["date_created"],
+        date_uploaded: image["data"][0]["date_created"],
         library_id: library["id"]
       )
     else 
