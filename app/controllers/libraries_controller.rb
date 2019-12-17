@@ -1,7 +1,7 @@
 class LibrariesController < ApplicationController
   before_action :authorized
 
-  def index
+  def mylibraries
     render json: current_user.libraries
   end
 

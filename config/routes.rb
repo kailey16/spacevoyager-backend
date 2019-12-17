@@ -16,8 +16,10 @@ Rails.application.routes.draw do
   get '/marsweather', to: 'renderings#marsweather'
 
   resources :libraries, only: [:create, :destroy]
-  post '/mylibraries', to: 'libraries#index'
+  get '/mylibraries', to: 'libraries#mylibraries'
 
   resources :save_items, only: [:create, :destroy]
+
+  get '/myitems', to: 'items#myitems'
   
 end
