@@ -18,7 +18,8 @@ Rails.application.routes.draw do
   resources :libraries, only: [:create, :destroy]
   get '/mylibraries', to: 'libraries#mylibraries'
 
-  resources :save_items, only: [:create, :destroy]
+  resources :save_items, only: [:create]
+  post '/delitemfromlib', to: 'save_items#destroy'
 
   get '/myitems', to: 'items#myitems'
   

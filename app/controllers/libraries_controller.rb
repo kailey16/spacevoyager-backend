@@ -14,7 +14,9 @@ class LibrariesController < ApplicationController
   end
 
   def destroy
+    deletedLib = Library.destroy(params[:id])
 
+    render json: deletedLib
   end
 
 end
