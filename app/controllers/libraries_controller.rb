@@ -5,6 +5,13 @@ class LibrariesController < ApplicationController
     render json: current_user.libraries
   end
 
+  def show
+    libId = params[:id]
+    items = Library.find(libId).items
+
+    render json: items
+  end
+
   def create
     name = params["libName"]
     description = params["libDescription"]
