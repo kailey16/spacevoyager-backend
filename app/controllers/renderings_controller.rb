@@ -26,7 +26,9 @@ class RenderingsController < ApplicationController
   end
 
   def nasalibraryWithKeyword
+
     searchTerm = params["keyword"]
+
     url = "https://images-api.nasa.gov//search?q=#{searchTerm}"
     response = RestClient.get("#{url}")
     parsedJSON = JSON.parse(response)
@@ -37,6 +39,15 @@ class RenderingsController < ApplicationController
   def marsweather
 
     url = "https://api.nasa.gov/insight_weather/?api_key=#{NASA_API_KEY}&feedtype=json&ver=1.0"
+    response = RestClient.get("#{url}")
+    parsedJSON = JSON.parse(response)
+
+    render json: parsedJSON
+  end
+
+  def apod
+
+    url = "https://api.nasa.gov/planetary/apod?api_key=#{NASA_API_KEY}"
     response = RestClient.get("#{url}")
     parsedJSON = JSON.parse(response)
 
