@@ -34,7 +34,7 @@ class SaveItemsController < ApplicationController
 
   def destroy
     item = SaveItem.find_by(library_id: params[:libId], item_id: params[:itemId]).destroy
-    byebug
+    
     render json: item
   end
 
