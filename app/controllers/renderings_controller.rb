@@ -14,6 +14,21 @@ class RenderingsController < ApplicationController
 
   end
 
+  def marsroverDate
+
+    # params["date"] "2019-12-03T05:00:00.000Z"
+    url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=#{params["date"].split("T")[0]}&api_key=#{NASA_API_KEY}"
+    response = RestClient.get("#{url}")
+    parsedJSON = JSON.parse(response)
+
+    if parsedJSON["photos"].length === 0
+      render json: {message: "no photos"}
+    else
+      render json: parsedJSON["photos"] 
+    end
+
+  end
+
   def nasalibraryInitial
 
     searchTerm = "moon"

@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   # example ------ get '/popular/:page', to: 'movie#popular'
   get '/marsrover', to: 'renderings#marsroverInitial'
+  post '/marsrover/date', to: 'renderings#marsroverDate'
+
   get '/nasalibrary', to: 'renderings#nasalibraryInitial'
   post '/searchwithkeyword', to: 'renderings#nasalibraryWithKeyword'
   get '/marsweather', to: 'renderings#marsweather'
