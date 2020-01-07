@@ -8,6 +8,9 @@ SpaceVoyager is a fun exploring single page web application where you can browse
  - dynamically communicating with multiple NASA APIs by fetching with Restclient gem
  - To start the whole application, please clone both of spacevoyager-backend and spacevoyager-frontend.
 
+### To start the whole application, please clone both of spacevoyager-backend and spacevoyager-frontend.
+You can find frontend at: https://github.com/kailey16/spacevoyager-frontend
+
 ### To start this backend repository:
 1. open and run 'bundle install'
 2. run 'rails s -p 3001'
